@@ -2,7 +2,7 @@
 
 namespace MartenaSoft\SiteBundle\Twig\Runtime;
 
-use MartenaSoft\SiteBundle\Dto\ActiveSiteDto;
+use MartenaSoft\CommonLibrary\Dto\ActiveSiteDto;
 use MartenaSoft\SiteBundle\Service\ActiveSiteService;
 use Twig\Extension\RuntimeExtensionInterface;
 

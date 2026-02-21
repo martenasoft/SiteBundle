@@ -1,0 +1,9 @@
+{% set activeSite = app.request.attributes.get('active_site') %}
+<footer class="py-3 mt-auto">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        {% for menuItem in menu(activeSite.id, app.request.locale, 'footer') %}
+                <li class="nav-item"><a href="{{ path(menuItem.route_name, {slug: menuItem.level == 1 ? null : menuItem.full_path}) }}" class="nav-link px-2 text-body-secondary">{{ menuItem.name }}</a></li>
+        {% endfor %}
+    </ul>
+    <p class="text-center text-body-secondary">© {{ "now"|date("Y") }} MartenaSoft</p>
+</footer>

@@ -1,0 +1,13 @@
+{% set activeSite = app.request.attributes.get('active_site') %}
+<ul class="list-group">
+    {% for menuItem in menu(activeSite.id, app.request.locale, 'left') %}
+        <li class="list-group-item">
+            <div style="margin-left: {{ menuItem.level * 10 }}px ">
+                <a href="{{ path(menuItem.route_name, {slug: menuItem.level == 1 ? null : menuItem.full_path}) }}"
+                   class="list-group-item-action">{{ menuItem.name }}</a>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
+
+

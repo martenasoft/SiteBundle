@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} {% if page is defined and page is not null %} {{ page.name }} {% endif %} {% endblock %}</title>
+
+        {{ encore_entry_link_tags('default') }}
+        {{ encore_entry_script_tags('default') }}
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+
+
+    <div class="d-flex flex-grow-1 justify-content-center align-items-center">
+        <div class="d-flex flex-column align-items-center w-100">
+            <div style="max-width: 400px;">
+            {% block flash_message %} {% include '@Site/' ~ app.request.attributes.get('active_site').templatePath ~ '/flash-message.html.twig' %}{% endblock %}
+                <h1>{%block h1 %} {% if page is defined and page is not null %} {{ page.name }} {% endif %} {% endblock %}</h1>
+            {% block body %}{% endblock %}
+            </div>
+        </div>
+
+    </div>
+
+        {% include '@Site/' ~ app.request.attributes.get('active_site').templatePath ~ '/footer.html.twig' %}
+    </body>
+</html>
