@@ -1,0 +1,12 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    MartenaSoft\SiteBundle\:
+        resource: '../../../src/'
+        exclude:
+            - '../../../src/DependencyInjection/'
+            - '../../../src/Entity/'
+            - '../../../src/Exception/'
+            - '../../../src/Dto/'
