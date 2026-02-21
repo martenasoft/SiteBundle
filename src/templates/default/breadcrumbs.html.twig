@@ -1,0 +1,21 @@
+{% if page is defined and page is not null and page.menu is not null and page.menu.parents is not null %}
+
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+
+        {% for key, item in page.menu.parents %}
+            {% if loop.last %}
+                <li class="breadcrumb-item active" aria-current="page">{{ item.name }}</li>
+            {% elseif loop.first %}
+
+                <li class="breadcrumb-item"><a href="{{ path('app_page_main') }}">{{ item.name }}</a></li>
+            {% elseif item.route_name is defined %}
+
+                <li class="breadcrumb-item"><a href="{{ path(item.route_name, {slug: item.full_path}) }}">{{ item.name }}</a></li>
+            {% endif %}
+
+        {% endfor %}
+
+    </ol>
+</nav>
+{% endif %}

@@ -1,0 +1,23 @@
+{% set activeSite = app.request.attributes.get('active_site') %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">{{ activeSite.name }}</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                {% for menuItem in menu(activeSite.id, app.request.locale, 'top') %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path(menuItem.route_name, {slug: menuItem.level == 1 ? null : menuItem.full_path}) }}">{{ menuItem.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            {% include '@Site/' ~ app.request.attributes.get('active_site').templatePath ~ '/language-top.html.twig' %}
+            {% include '@Site/' ~ app.request.attributes.get('active_site').templatePath ~ '/user-nav.html.twig' %}
+        </div>
+    </div>
+</nav>
+
+
+

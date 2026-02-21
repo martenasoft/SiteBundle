@@ -926,16 +926,16 @@
         },
         {
             "name": "martenasoft/common_library",
-            "version": "v1.0.0",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/martenasoft/CommonLibrary.git",
-                "reference": "e850e0810581f69e0474bbef344bafb8315433f0"
+                "reference": "e52906ceeaf44bc85d7db1455c7ba3a16223cfff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/martenasoft/CommonLibrary/zipball/e850e0810581f69e0474bbef344bafb8315433f0",
-                "reference": "e850e0810581f69e0474bbef344bafb8315433f0",
+                "url": "https://api.github.com/repos/martenasoft/CommonLibrary/zipball/e52906ceeaf44bc85d7db1455c7ba3a16223cfff",
+                "reference": "e52906ceeaf44bc85d7db1455c7ba3a16223cfff",
                 "shasum": ""
             },
             "type": "library",
@@ -957,9 +957,9 @@
             "description": "MartenaSoft Common library",
             "support": {
                 "issues": "https://github.com/martenasoft/CommonLibrary/issues",
-                "source": "https://github.com/martenasoft/CommonLibrary/tree/v1.0.0"
+                "source": "https://github.com/martenasoft/CommonLibrary/tree/v1.1.2"
             },
-            "time": "2026-02-21T11:29:39+00:00"
+            "time": "2026-02-21T13:09:08+00:00"
         },
         {
             "name": "psr/cache",

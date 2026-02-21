@@ -1,0 +1,16 @@
+<div>
+  {% for locale in app.request.attributes.get('active_site').languages %}
+        {% if app.request.locale == locale  %}
+            {{ locale }}
+        {% else %}
+            <a href="{{ path('app_page_main', {_locale: locale}) }}">{{ locale }}</a>
+        {% endif %}
+
+        {% if loop.last == false %} | {% endif %}
+
+
+    {% endfor %}
+</div>
+
+
+

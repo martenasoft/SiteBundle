@@ -3,7 +3,7 @@
 namespace MartenaSoft\SiteBundle\Service;
 
 use MartenaSoft\CommonLibrary\Dictionary\DictionaryCommonStatus;
-use MartenaSoft\SiteBundle\Dto\ActiveSiteDto;
+use MartenaSoft\CommonLibrary\Dto\ActiveSiteDto;
 use MartenaSoft\SiteBundle\Exception\SiteNotFound;
 use MartenaSoft\SiteBundle\Repository\SiteConfigureRepository;
 use Psr\Log\LoggerInterface;
@@ -35,6 +35,7 @@ class ActiveSiteService
 
         try {
             $host = $this->requestContext->getHost();
+
             $this->activeSiteDto = $this->geActiveSiteFromConfigFile($host);
 
             if ($this->activeSiteDto) {
