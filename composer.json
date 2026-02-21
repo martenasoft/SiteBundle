@@ -15,5 +15,16 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "symfony/http-kernel": "^8.0",
+        "symfony/dependency-injection": "^8.0",
+        "symfony/config": "^8.0",
+        "symfony/yaml": "^8.0",
+        "symfony/object-mapper": "^8.0",
+        "doctrine/doctrine-bundle": "^3.2",
+        "doctrine/orm": "^3.6",
+        "martenasoft/common_library": "^1.0",
+        "twig/twig": "^3.23",
+        "symfony/twig-bundle": "^8.0"
+    }
 }
