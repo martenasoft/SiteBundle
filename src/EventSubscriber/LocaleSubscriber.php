@@ -38,12 +38,13 @@ class LocaleSubscriber implements EventSubscriberInterface
         if (!$locale || !in_array($locale, $activeSiteDto->languages)) {
             $locale = $activeSiteDto->defaultLanguage;
         }
-
-        if ($request->getPathInfo() == '/' . $activeSiteDto->defaultLanguage) {
-            $event->setResponse(new RedirectResponse('/'));
-        }
+//
+//        if ($request->getPathInfo() == '/' . $activeSiteDto->defaultLanguage) {
+//            $event->setResponse(new RedirectResponse('/'));
+//        }
 
         $request->setLocale($locale);
+        $request->attributes->set('_locale', $locale);
         $request->setDefaultLocale($activeSiteDto->defaultLanguage);
         $request->attributes->set('active_site', $activeSiteDto);
     }

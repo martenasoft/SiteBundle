@@ -72,7 +72,7 @@ class AdminClearSiteCommand extends Command
 
         if ($siteName === 'all') {
             $imagesPath = $this->parameterBag->get('kernel.project_dir').'/public/images';
-            $this->truncateAll(['page', 'menu', 'image', 'mrs_user', 'permission', 'role', 'site_configure']);
+            $this->truncateAll(['page', 'mrs_user', 'permission', 'role', 'site_configure']);
             $filesystem = new Filesystem();
             $filesystem->remove($imagesPath);
             $io->success("All data cleared successfully!");

@@ -1,7 +1,25 @@
  <div style="margin-left: 10px">
 {% if app.user is defined and app.user is not null %}
-    <a href="{{ path('app_user_profile', {uuid: app.user.uuid}) }}">Hello {{ app.user.email|split('@')[0]}}!</a> |  <a href="{{ path('app_logout') }}">Logout</a>
+    <div class="btn-group">
+        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+           {{ 'Hello' | trans }} {{ app.user.email|split('@')[0]}}!
+        </button>
+        <ul class="dropdown-menu">
+            {% if 'ROLE_SUPER_ADMIN' in app.user.roles or 'ROLE_ADMIN' in app.user.roles %}
+                {% if app.request.attributes.get('_route') != 'admin_main' %}
+                    <li><a class="dropdown-item" href="{{ site_path('admin_main') }}">{{ 'Admin panel' | trans }}</a></li>
+                {% elseif app.request.attributes.get('_route') != 'app_page_main' %}
+                    <li><a class="dropdown-item" href="{{ site_path('app_page_main') }}">{{ 'Home' | trans }}</a></li>
+                {% endif %}
+
+
+                {% endif %}
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="{{ path('app_logout') }}">{{ 'Logout' | trans }}</a></li>
+        </ul>
+    </div>
+
 {% else %}
-    <a href="{{ path('app_login') }}">Login</a>  <a href="{{ path('app_register') }}">Register</a>
+    <a href="{{ path('app_login') }}">{{ 'Login' | trans }}</a>  <a href="{{ path('app_register') }}">{{ 'Register' | trans }}</a>
 {% endif %}
  </div>

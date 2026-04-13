@@ -21,6 +21,7 @@ class ActiveSiteExtension extends AbstractExtension
     {
         return [
             new TwigFunction('active_site', [ActiveSiteExtensionRuntime::class, 'activeSite']),
+            new TwigFunction('site_path', [ActiveSiteExtensionRuntime::class, 'sitePath']),
         ];
     }
 }

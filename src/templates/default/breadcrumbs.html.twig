@@ -1,4 +1,4 @@
-{% if page is defined and page is not null and page.menu is not null and page.menu.parents is not null %}
+{% if page is defined and page is not null and page.menu is defined and page.menu is not null and page.menu.parents is not null %}
 
 <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
     <ol class="breadcrumb">

@@ -3,6 +3,7 @@
 namespace MartenaSoft\SiteBundle\Service;
 
 use MartenaSoft\CommonLibrary\Dictionary\DictionaryCommonStatus;
+use MartenaSoft\CommonLibrary\Dictionary\DictionaryPage;
 use MartenaSoft\CommonLibrary\Dto\ActiveSiteDto;
 use MartenaSoft\SiteBundle\Exception\SiteNotFound;
 use MartenaSoft\SiteBundle\Repository\SiteConfigureRepository;
@@ -87,6 +88,8 @@ class ActiveSiteService
                 $result->activeByIps = $value['active_by_ips'];
                 $result->templatePath = $value['template_path'];
                 $result->previewOnMainLimit = $value['preview_on_main_limit'];
+                $result->timeZone = $value['time_zone'] ?? 'UTC';
+                $result->timeFormat = $value['time_format'] ?? \DateTime::ATOM;
                 return $result;
             }
         }

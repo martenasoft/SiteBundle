@@ -9,7 +9,8 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 {% for menuItem in menu(activeSite.id, app.request.locale, 'top') %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path(menuItem.route_name, {slug: menuItem.level == 1 ? null : menuItem.full_path}) }}">{{ menuItem.name }}</a>
+
+                        <a class="nav-link" href="{{ path(menuItem.route_name, {slug:  menuItem.full_path}) }}">{{ (menuItem.title == '' ? menuItem.name : menuItem.title) }}</a>
                     </li>
                 {% endfor %}
             </ul>
