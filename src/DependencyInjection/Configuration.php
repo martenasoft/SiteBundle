@@ -27,6 +27,8 @@ class Configuration implements ConfigurationInterface
                                 ->end()
                                     ->scalarNode('default_language')->end()
                                     ->scalarNode('template_path')->end()
+                                    ->scalarNode('time_zone')->end()
+                                    ->scalarNode('time_format')->defaultValue(\DateTime::ATOM) ->end()
                                     ->arrayNode('languages')
                                 ->scalarPrototype()->end()
                             ->end()
